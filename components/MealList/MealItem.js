@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import MealDetail from "./MealDetail";
+import MealDetail from "../MealDetail";
 
 const MealItem = ({
   id,
@@ -27,7 +27,7 @@ const MealItem = ({
   return (
     <View style={styles.mealItem}>
       <Pressable
-      onPress={selectMealHandler}
+        onPress={selectMealHandler}
         android_ripple={{ color: "#ccc" }}
         style={({ pressed }) => (pressed ? styles.buttonPress : null)}>
         <View style={styles.innerContainer}>
@@ -35,7 +35,11 @@ const MealItem = ({
             <Image source={{ uri: imageUrl }} style={styles.image} />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <MealDetail complexity={complexity} duration={duration} affordability={affordability} />
+          <MealDetail
+            complexity={complexity}
+            duration={duration}
+            affordability={affordability}
+          />
         </View>
       </Pressable>
     </View>
